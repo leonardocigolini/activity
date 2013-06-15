@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app style="" class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width">
+
+  <title>Workmax Activity Editor</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+
+  <script src="js/custom.js"></script>
+
+</head>
+<body ng-controller='ActivityController'>
+
+  <!-- Header and Nav -->
+
+  <div class="row">
+    <div class="large-3 columns">
+      <h1><img src="image/400x100textLogo.gif"></h1>
+    </div>
+    <div class="large-9 columns">
+      <ul class="button-group right">
+        <li><a href="#" class="button">Send to WMX</a></li>
+        <li><a href="#" class="button">Print</a></li>
+        <li><a href="#" class="button" ng-click="start()">Start New</a></li>
+        <li><a href="#" class="button" ng-click="pause()" ng-hide="paused">Pause</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- End Header and Nav -->
+  <fieldset>
+  <div class="row">
+    <div ng-repeat='item in items'>
+      <div class="row">
+        <div class="large-4 columns">
+          <input ng-model='item.desc' placeholder="large-5.columns">
+        </div>
+
+        <div class="large-1 columns">
+          <div class="tiny button" ng-click="duplicate ($index)">Dup</div>
+        </div>
+        <div class="large-2 columns">
+          <span> {{ item.tbegin | date:'mediumTime'}} </span>
+        </div>
+        <div class="large-2 columns">
+          <span> {{ item.tend | date:'mediumTime'}} </span>
+        </div>
+        <div class="large-2 columns">
+          <span> {{ item.duration | number:0 }} </span>
+        </div>
+        <div class="large-1 columns">
+          <div class="tiny button" ng-click="remove ($index)">Done</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </fieldset>
+
+<!--
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Id</th>
+          <th>Activity</th>
+          <th width="150">Duration</th>
+          <th width="150">Cmd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div ng-repeat='item in items'>
+          <tr>
+            <td></td>
+            <td>{{item.title}}</td>
+            <td>{{item.duration}}</td>
+            <td><button ng-click="remove ($index)">Done</button></td>
+          </tr>
+        </div>
+      </tbody>
+
+-->
+
+
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright 2013 SKYMAX DG</p>
+        </div>
+        <div class="large-6 columns">
+          <p>Rev. 0.1  01-06-2013</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="js/zepto.js"></script>
+  <script src="js/foundation.js"></script>
+  <!--- angular.js e il controllore todo.js -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/todo.js"></script>
+  <script> $(document).foundation(); </script>
+
+
+</body></html>

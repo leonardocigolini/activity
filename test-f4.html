@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app style="" class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width">
+
+  <title>test angularjs e foundation4</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+
+  <script src="js/custom.js"></script>
+
+</head>
+<body ng-controller='TodoController'>
+
+  <!-- Header and Nav -->
+
+  <div class="row">
+    <div class="large-3 columns">
+      <h1><img src="image/400x100textLogo.gif"></h1>
+    </div>
+    <div class="large-9 columns">
+      <ul class="button-group right">
+        <li><a href="#" class="button"></a></li>
+        <li><a href="#" class="button">Print</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <button ng-click="insert()">Done</button>
+  <!-- End Header and Nav -->
+  <div class="row">
+    <div ng-repeat='item in items'>
+      <div class="row">
+        <div class="large-7 columns">
+          <input ng-model='item.title'>
+        </div>
+
+        <div class="large-2 columns">
+          <input ng-model='item.duration'>
+        </div>
+
+        <div class="large-2 columns">
+          <span>{{item.duration * item.price | currency}}</span>
+        </div>
+
+        <div class="large-1 columns">
+          <button ng-click="remove ($index)">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Id</th>
+          <th>Activity</th>
+          <th width="150">Duration</th>
+          <th width="150">Cmd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div ng-repeat='item in items'>
+          <tr>
+            <td></td>
+            <td>{{item.title}}</td>
+            <td>{{item.duration}}</td>
+            <td><button ng-click="remove ($index)">Done</button></td>
+          </tr>
+        </div>
+      </tbody>
+
+-->
+
+
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright 2013 SKYMAX DG</p>
+        </div>
+        <div class="large-6 columns">
+          <p>Rev. 0.1  01-06-2013</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="js/zepto.js"></script>
+  <script src="js/foundation.js"></script>
+  <!--- angular.js e il controllore todo.js -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/todo.js"></script>
+  <script> $(document).foundation(); </script>
+
+
+</body></html>
